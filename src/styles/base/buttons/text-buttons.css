@@ -1,0 +1,25 @@
+button.text {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--clr-brand-600) !important;
+  transition-duration: var(--duration-2);
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease-in;
+}
+  
+button.text.accent {
+  color: var(--clr-accent-600) !important;
+}
+
+button.text.danger {
+  color: var(--clr-danger-600) !important;
+}
+  
+button.text.gray {
+  color: var(--clr-gray-600) !important;
+}
+    
+button.text.success {
+  color: var(--clr-success-600) !important;
+}

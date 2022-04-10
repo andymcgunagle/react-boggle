@@ -1,0 +1,28 @@
+button.outlined {
+  background-color: transparent;
+  border-color: var(--clr-brand-600);
+  color: var(--clr-brand-600) !important;
+  transition-duration: var(--duration-2);
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease-in;
+}
+    
+button.outlined.accent {
+  border-color: var(--clr-accent-600);
+  color: var(--clr-accent-600) !important;
+}
+
+button.outlined.danger {
+  border-color: var(--clr-danger-600);
+  color: var(--clr-danger-600) !important;
+}
+  
+button.outlined.gray {
+  border-color: var(--clr-gray-600);
+  color: var(--clr-gray-600) !important;
+}
+  
+button.outlined.success {
+  border-color: var(--clr-success-600);
+  color: var(--clr-success-600) !important;
+}

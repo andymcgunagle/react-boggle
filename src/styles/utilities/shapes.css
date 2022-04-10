@@ -1,0 +1,48 @@
+.shape {
+  height: var(--space-16);
+  padding: 0;
+  width: var(--space-16);
+}
+
+.shape * {
+  font-size: var(--font-size-8);
+}
+
+/* Shapes */
+
+.shape.circle {
+  border-radius: var(--border-radius-full);
+}
+
+.shape.square {
+  border-radius: var(--border-radius-4);
+}
+
+/* Sizes */
+
+.shape.small {
+  height: var(--space-12);
+  width: var(--space-12);
+}
+
+.shape.small * {
+  font-size: var(--font-size-4);
+}
+
+.shape.large {
+  height: var(--space-20);
+  width: var(--space-20);
+}
+
+.shape.large * {
+  font-size: var(--font-size-14);
+}
+
+.shape.extra-large {
+  height: var(--space-24);
+  width: var(--space-24);
+}
+
+.shape.extra-large * {
+  font-size: var(--font-size-18);
+}

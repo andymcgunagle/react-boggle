@@ -1,0 +1,39 @@
+button.light:hover,
+button.outlined:hover,
+button.text:hover {
+  background-color: var(--clr-brand-100);
+  border-color: var(--clr-brand-700);
+  color: var(--clr-brand-700) !important;
+}
+
+button.light.accent:hover,
+button.outlined.accent:hover,
+button.text.accent:hover {
+  background-color: var(--clr-accent-100);
+  border-color: var(--clr-accent-700);
+  color: var(--clr-accent-700) !important;
+}
+
+button.light.danger:hover,
+button.outlined.danger:hover,
+button.text.danger:hover {
+  background-color: var(--clr-danger-100);
+  border-color: var(--clr-danger-700);
+  color: var(--clr-danger-700) !important;
+}
+
+button.light.gray:hover,
+button.outlined.gray:hover,
+button.text.gray:hover {
+  background-color: var(--clr-gray-50);
+  border-color: var(--clr-gray-900);
+  color: var(--clr-gray-900) !important;
+}
+
+button.light.success:hover,
+button.outlined.success:hover,
+button.text.success:hover {
+  background-color: var(--clr-success-100);
+  border-color: var(--clr-success-700);
+  color: var(--clr-success-700) !important;
+}

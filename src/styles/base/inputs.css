@@ -1,0 +1,58 @@
+input {
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius-0);
+  border: var(--border-width-2) solid var(--clr-gray-300);
+  line-height: 1;
+  padding: var(--space-4) var(--space-8);
+  transition-duration: var(--duration-2);
+  transition-property: background-color, border-bottom, border-color;
+  transition-timing-function: ease-in;
+  width: 100%;
+}
+  
+input:focus {
+  background-color: var(--clr-brand-50);
+  border: var(--border-width-2) solid var(--clr-brand-800);
+  color: var(--clr-brand-800) !important;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--clr-gray-300) !important;
+}
+
+/* Rounded */
+
+input.rounded {
+  border-radius: var(--border-radius-full);
+}
+
+/* With Icon */
+
+div.input-with-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+}
+
+div.input-with-icon-wrapper > .material-icons-round {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+
+  font-size: var(--font-size-8);
+  opacity: 0.25;
+  transform: translateY(-50%);
+}
+
+div.input-with-icon-wrapper:focus-within > .material-icons-round {
+  color: var(--clr-brand-800) !important;
+  opacity: 0.5;
+}
+
+input.with-icon {
+  padding-left: var(--space-20);
+}

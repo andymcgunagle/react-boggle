@@ -1,0 +1,30 @@
+.card {
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius-6);
+  box-shadow: var(--box-shadow-8);
+  padding: var(--space-16);
+}
+
+.card.brand {
+  background-color: var(--clr-brand-700);
+}
+
+.card.brand > * {
+  color: var(--clr-gray-50);
+}
+
+.card.brand.light {
+  background-color: var(--clr-brand-100);
+  border: var(--border-width-2) solid var(--clr-brand-700);
+}
+
+.card.danger.light {
+  background-color: var(--clr-danger-100);
+  border: var(--border-width-2) solid var(--clr-danger-700);
+}
+
+.card.glass {
+  -webkit-backdrop-filter: blur(10px) saturate(125%);
+  backdrop-filter: blur(10px) saturate(125%);
+  background-color: rgba(255, 255, 255, 0.25);
+}

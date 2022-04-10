@@ -1,0 +1,177 @@
+:root {
+  /* Animations */
+  --animation-blink: blink 1s cubic-bezier(0, 0, 0.3, 1) infinite;
+  --animation-bounce: bounce 2s cubic-bezier(0.5, -.3, 0.1, 1.5) infinite;
+  --animation-fade-in: fade-in 0.5s ease-in;
+  --animation-fade-out: fade-out 0.5s ease-in;
+  --animation-float: float 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  --animation-ping: ping 5s cubic-bezier(0, 0, 0.3, 1) infinite;
+  --animation-pulse: pulse 2s cubic-bezier(0, 0, 0.3, 1) infinite;
+  --animation-scale-down: scale-down 0.5s ease-in;
+  --animation-scale-up: scale-up 0.5s ease-in;
+  --animation-shake-x: shake-x 0.75s cubic-bezier(0, 0, 0, 1);
+  --animation-shake-y: shake-y 0.75s cubic-bezier(0, 0, 0, 1);
+  --animation-slide-in-down: slide-in-down 0.5s ease-in;
+  --animation-slide-in-left: slide-in-left 0.5s ease-in;
+  --animation-slide-in-right: slide-in-right 0.5s ease-in;
+  --animation-slide-in-up: slide-in-up 0.5s ease-in;
+  --animation-slide-out-down: slide-out-down 0.5s ease-in;
+  --animation-slide-out-left: slide-out-left 0.5s ease-in;
+  --animation-slide-out-right: slide-out-right 0.5s ease-in;
+  --animation-slide-out-up: slide-out-up 0.5s ease-in;
+  --animation-spin: spin 2s linear infinite;
+
+  /* Border Radius */
+  --border-radius-0: 0.25rem;
+  --border-radius-2: 0.375rem;
+  --border-radius-4: 0.5rem;
+  --border-radius-6: 0.75rem;
+  --border-radius-8: 1rem;
+  --border-radius-10: 1.5rem;
+  --border-radius-full: 9999px;
+
+  /* Border Width */
+  --border-width-0: 0px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-6: 6px;
+  --border-width-8: 8px;
+  --border-width-10: 10px;
+
+  /* Box Shadows */
+  --box-shadow-0: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --box-shadow-2: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --box-shadow-4: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --box-shadow-6: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow-8: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --box-shadow-10: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Breakpoints */
+  --breakpoint-0: 480px;
+  --breakpoint-2: 640px;
+  --breakpoint-4: 768px;
+  --breakpoint-6: 1280px;
+  --breakpoint-8: 1280px;
+  --breakpoint-10: 1536px;
+
+  /* Color - Brand */
+  --clr-brand-50: #eff6ff;
+  --clr-brand-100: #dbeafe;
+  --clr-brand-200: #bfdbfe;
+  --clr-brand-300: #93c5fd;
+  --clr-brand-400: #60a5fa;
+  --clr-brand-500: #3b82f6;
+  --clr-brand-600: #2563eb;
+  --clr-brand-700: #1d4ed8;
+  --clr-brand-800: #1e40af;
+  --clr-brand-900: #1e3a8a;
+  
+  /* Color - Accent */
+  --clr-accent-50: #faf5ff;
+  --clr-accent-100: #f3e8ff;
+  --clr-accent-200: #e9d5ff;
+  --clr-accent-300: #d8b4fe;
+  --clr-accent-400: #c084fc;
+  --clr-accent-500: #a855f7;
+  --clr-accent-600: #9333ea;
+  --clr-accent-700: #7e22ce;
+  --clr-accent-800: #6b21a8;
+  --clr-accent-900: #581c87;
+  
+  /* Color - Grays */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gray-50: hsl(210, 40%, 98%);
+  --clr-gray-100: hsl(210, 40%, 96%);
+  --clr-gray-200: hsl(214, 32%, 91%);
+  --clr-gray-300: hsl(213, 27%, 84%);
+  --clr-gray-400: hsl(215, 20%, 65%);
+  --clr-gray-500: hsl(215, 16%, 47%);
+  --clr-gray-600: hsl(215, 19%, 35%);
+  --clr-gray-700: hsl(215, 25%, 27%);
+  --clr-gray-800: hsl(217, 33%, 17%);
+  --clr-gray-900: hsl(222, 47%, 11%);
+  --clr-black: hsl(0, 0%, 0%);
+  
+  /* Color - Success */
+  --clr-success-50: #f0fdf4;
+  --clr-success-100: #dcfce7;
+  --clr-success-200: #bbf7d0;
+  --clr-success-300: #86efac;
+  --clr-success-400: #4ade80;
+  --clr-success-500: #22c55e;
+  --clr-success-600: #16a34a;
+  --clr-success-700: #15803d;
+  --clr-success-800: #166534;
+  --clr-success-900: #14532d;
+  
+  /* Color - Warning */
+  --clr-warning-50: #fefce8;
+  --clr-warning-100: #fef9c3;
+  --clr-warning-200: #fef08a;
+  --clr-warning-300: #fde047;
+  --clr-warning-400: #facc15;
+  --clr-warning-500: #eab308;
+  --clr-warning-600: #ca8a04;
+  --clr-warning-700: #a16207;
+  --clr-warning-800: #854d0e;
+  --clr-warning-900: #713f12;
+  
+  /* Color - Danger */
+  --clr-danger-50: #fef2f2;
+  --clr-danger-100: #fee2e2;
+  --clr-danger-200: #fecaca;
+  --clr-danger-300: #fca5a5;
+  --clr-danger-400: #f87171;
+  --clr-danger-500: #ef4444;
+  --clr-danger-600: #dc2626;
+  --clr-danger-700: #b91c1c;
+  --clr-danger-800: #991b1b;
+  --clr-danger-900: #7f1d1d;
+
+  /* Durations */
+  --duration-0: 0.125s;
+  --duration-2: 0.25s;
+  --duration-4: 00.5s;
+  --duration-6: 00.75s;
+  --duration-8: 0.1s;
+  --duration-10: 0.2s;
+
+  /* Font Sizes - https://royalfig.github.io/fluid-typography-calculator/ */
+  --font-size-0: clamp(0.6875rem, 0.675rem + 0.0625vw, 0.75rem);
+  --font-size-2: clamp(0.8125rem, 0.8rem + 0.0625vw, 0.875rem);
+  --font-size-4: clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem);
+  --font-size-6: clamp(1.0625rem, 1.05rem + 0.0625vw, 1.125rem);
+  --font-size-8: clamp(1.1875rem, 1.175rem + 0.0625vw, 1.25rem);
+  --font-size-10: clamp(1.3125rem, 1.3rem + 0.0625vw, 1.375rem);
+  --font-size-12: clamp(1.4375rem, 1.425rem + 0.0625vw, 1.5rem);
+  --font-size-14: clamp(1.5625rem, 1.55rem + 0.0625vw, 1.625rem);
+  --font-size-16: clamp(1.6875rem, 1.675rem + 0.0625vw, 1.75rem);
+  --font-size-18: clamp(1.8125rem, 1.8rem + 0.0625vw, 1.875rem);
+  --font-size-20: clamp(1.9375rem, 1.925rem + 0.0625vw, 2rem);
+  
+  /* Font Weights */
+  --font-weight-0: 100;
+  --font-weight-2: 200;
+  --font-weight-4: 400;
+  --font-weight-6: 600;
+  --font-weight-8: 700;
+  --font-weight-10: 800;
+
+  /* Space - https://royalfig.github.io/fluid-typography-calculator/ */
+  --space-0: clamp(0.125rem, 0.1rem + 0.125vw, 0.25rem);
+  --space-2: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --space-4: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+  --space-6: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
+  --space-8: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --space-10: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+  --space-12: clamp(1.5rem, 1.45rem + 0.25vw, 1.75rem);
+  --space-14: clamp(1.75rem, 1.7rem + 0.25vw, 2rem);
+  --space-16: clamp(2rem, 1.95rem + 0.25vw, 2.25rem);
+  --space-18: clamp(2.25rem, 2.2rem + 0.25vw, 2.5rem);
+  --space-20: clamp(2.5rem, 2.45rem + 0.25vw, 2.75rem);
+  --space-22: clamp(2.75rem, 2.7rem + 0.25vw, 3rem);
+  --space-24: clamp(3rem, 2.95rem + 0.25vw, 3.25rem);
+  --space-26: clamp(3.25rem, 3.2rem + 0.25vw, 3.5rem);
+  --space-28: clamp(3.5rem, 3.45rem + 0.25vw, 3.75rem);
+  --space-30: clamp(3.75rem, 3.7rem + 0.25vw, 4rem);
+}

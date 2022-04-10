@@ -1,0 +1,18 @@
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  width: calc(100% - var(--space-2) * 2);
+  max-width: 600px;
+}
+
+.modal.top {
+  position: absolute;
+  top: var(--space-2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none;
+}

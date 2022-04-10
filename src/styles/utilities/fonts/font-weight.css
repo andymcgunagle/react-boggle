@@ -1,0 +1,23 @@
+.font-weight-0 {
+  font-weight: var(--font-weight-0);
+}
+
+.font-weight-2 {
+  font-weight: var(--font-weight-2);
+}
+
+.font-weight-4 {
+  font-weight: var(--font-weight-4);
+}
+
+.font-weight-6 {
+  font-weight: var(--font-weight-6);
+}
+
+.font-weight-8 {
+  font-weight: var(--font-weight-8);
+}
+
+.font-weight-10 {
+  font-weight: var(--font-weight-10);
+}

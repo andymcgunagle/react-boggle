@@ -1,0 +1,51 @@
+/* Columns */
+
+.column-center,
+.column-end,
+.column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.column-center {
+  align-items: center;
+}
+
+.column-end {
+  align-items: flex-end;
+}
+
+.column-start {
+  align-items: flex-start;
+}
+
+.column-center input {
+  width: 100%;
+}
+
+/* Rows */
+
+.row-between,
+.row-center,
+.row-evenly {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.row-evenly {
+  justify-content: space-evenly;
+}
