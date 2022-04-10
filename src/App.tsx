@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { allDice } from './data/allDice';
 
 import { getRandomLetterFromDie } from './utils/getRandomLetterFromDie';
 
 import styled from 'styled-components';
+
+import GameTimer from './components/GameTimer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,9 +24,10 @@ const Grid = styled.div`
   gap: 0.25rem;
   
   background-color: navy;
-  border: 1px solid blue;
-  padding: 1rem;
   border-radius: 1rem;
+  border: 1px solid blue;
+  box-shadow: var(--box-shadow-6);
+  padding: 1rem;
 `;
 
 const Die = styled.div`
@@ -51,6 +54,7 @@ export default function App() {
       <h1 className="font-20">
         React Boggle
       </h1>
+      <GameTimer />
       <Grid>
         {dice.map(die => (
           <Die key={die.id}>
