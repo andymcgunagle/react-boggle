@@ -44,15 +44,25 @@ const Clock = styled.div<{ gameTimer: number; }>`
   }
 `;
 
-export default function GameTimer() {
+export default function GameTimer({
+  setShowDice,
+  superBigBoggle,
+}: GameTimerProps) {
   const [gameTimer, setGameTimer] = useState(0);
 
+  function startGame() {
+    setGameTimer(60 * (superBigBoggle ? 4 : 3));
+    setShowDice(true);
+  };
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (gameTimer > 0) setGameTimer(gameTimer - 1);
-    }, 1000);
+    const timer = setTimeout(() => gameTimer > 0 && setGameTimer(gameTimer - 1), 1000);
     return () => clearTimeout(timer);
   }, [gameTimer]);
+
+  useEffect(() => {
+    setGameTimer(0);
+  }, [superBigBoggle]);
 
   return (
     <Wrapper>
@@ -66,11 +76,17 @@ export default function GameTimer() {
         </span>
       </Clock>
       <button
-        onClick={() => setGameTimer(60 * 3)}
-        className="outlined"
+        onClick={startGame}
+        disabled={gameTimer > 0}
+        className="font-4"
       >
-        Restart
+        Start
       </button>
     </Wrapper>
   );
 };
+
+interface GameTimerProps {
+  setShowDice: React.Dispatch<React.SetStateAction<boolean>>,
+  superBigBoggle: boolean;
+}

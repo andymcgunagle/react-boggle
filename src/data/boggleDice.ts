@@ -3,7 +3,7 @@ export interface DieObject {
   sides: string[];
 };
 
-export const allDice: DieObject[] = [
+export const boggleDice: DieObject[] = [
   {
     id: 'die1',
     sides: ['A', 'E', 'A', 'N', 'E', 'G',],

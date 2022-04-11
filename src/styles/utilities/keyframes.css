@@ -42,11 +42,11 @@
 }
 
 @keyframes shake-x {
-  0%, 100% { transform: translateX(0%) }
-  20% { transform: translateX(-5%) }
-  40% { transform: translateX(5%) }
-  60% { transform: translateX(-5%) }
-  80% { transform: translateX(5%) }
+  0%, 100% { transform: rotate(0deg) }
+  20% { transform: rotate(-5deg) }
+  40% { transform: rotate(5deg) }
+  60% { transform: rotate(-5deg) }
+  80% { transform: rotate(5deg) }
 }
 
 @keyframes shake-y {

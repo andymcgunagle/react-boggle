@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-import { allDice } from './data/allDice';
+import { boggleDice } from './data/boggleDice';
 
 import { getRandomLetterFromDie } from './utils/getRandomLetterFromDie';
 
 import styled from 'styled-components';
 
 import GameTimer from './components/GameTimer';
+import { superBigBoggleDice } from './data/superBigBoggleDice';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,12 +16,14 @@ const Wrapper = styled.div`
   justify-content: center;
   gap: 1rem;
   
-  height: 80vh;
+  min-height: 80vh;
+  text-align: center;
 `;
 
-const Grid = styled.div`
+const Grid = styled.div<{ superBigBoggle: boolean; }>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  
+  grid-template-columns: ${({ superBigBoggle }) => superBigBoggle ? 'repeat(6, 1fr)' : 'repeat(4, 1fr)'};
   gap: 0.25rem;
   
   background-color: navy;
@@ -30,43 +33,82 @@ const Grid = styled.div`
   padding: 1rem;
 `;
 
-const Die = styled.div`
+const Die = styled.p<{ showDice: boolean; superBigBoggle: boolean; }>`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 4rem;
-  width: 4rem;
+  height: ${({ superBigBoggle }) => superBigBoggle ? '3rem' : '4rem'};
+  width: ${({ superBigBoggle }) => superBigBoggle ? '3rem' : '4rem'};
 
+  animation: ${({ showDice }) => showDice ? 'none' : 'var(--animation-shake-x)'};
   background-color: white;
   border-radius: 0.25rem;
+  color: ${({ showDice }) => showDice ? 'black' : 'white'};
   font-size: 1.5rem;
   padding: 1rem;
+  
+  @media only screen and (min-width: 768px) {
+    height: 4rem;
+    width: 4rem;
+  }
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
 
 export default function App() {
-  const [dice, setDice] = useState(allDice);
+  const [dice, setDice] = useState(boggleDice);
+  const [superBigBoggle, setSuperBigBoggle] = useState(false);
+  const [showDice, setShowDice] = useState(false);
 
-  const shakeDice = () => setDice([...allDice.sort(() => Math.random() - 0.5)]);
+  const shakeDice = () => {
+    setShowDice(false);
+    setDice([...dice.sort(() => Math.random() - 0.5)]);
+  };
+
+  const switchGames = () => {
+    setShowDice(false);
+    setDice(superBigBoggle ? boggleDice : superBigBoggleDice);
+    setSuperBigBoggle(!superBigBoggle);
+  };
 
   return (
     <Wrapper>
-      <h1 className="font-20">
-        React Boggle
+      <h1 className="font-16 text-align-center">
+        React {superBigBoggle ? 'Super Big Boggle' : 'Boggle'}
       </h1>
-      <GameTimer />
-      <Grid>
+      <GameTimer
+        setShowDice={setShowDice}
+        superBigBoggle={superBigBoggle}
+      />
+      <Grid superBigBoggle={superBigBoggle}>
         {dice.map(die => (
-          <Die key={die.id}>
-            <p className="font-16">
-              {getRandomLetterFromDie(die.sides)}
-            </p>
+          <Die
+            key={die.id}
+            showDice={showDice}
+            superBigBoggle={superBigBoggle}
+          >
+            {getRandomLetterFromDie(die.sides)}
           </Die>
         ))}
       </Grid>
-      <button onClick={shakeDice}>
-        Shake
-      </button>
+      <ButtonsWrapper>
+        <button
+          className="font-4"
+          onClick={shakeDice}
+        >
+          Shake
+        </button>
+        <button
+          className="font-4 outlined"
+          onClick={switchGames}
+        >
+          {superBigBoggle ? 'Switch to Boggle' : 'Switch to Super Big Boggle'}
+        </button>
+      </ButtonsWrapper>
     </Wrapper>
   );
 };

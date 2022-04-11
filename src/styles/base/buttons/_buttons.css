@@ -23,10 +23,12 @@ button * {
 }
   
 button:active {
-  /* transform: translateY(0.125rem); */
-  /* scale button on click */
   transform: scale(0.95);
   box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.5;
 }
 
 button.standard.accent {
