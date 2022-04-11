@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { DieObject } from "../data/boggleDice";
+
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -45,6 +47,7 @@ const Clock = styled.div<{ gameTimer: number; }>`
 `;
 
 export default function GameTimer({
+  dice,
   setShowDice,
   superBigBoggle,
 }: GameTimerProps) {
@@ -60,9 +63,9 @@ export default function GameTimer({
     return () => clearTimeout(timer);
   }, [gameTimer]);
 
-  useEffect(() => {
-    setGameTimer(0);
-  }, [superBigBoggle]);
+  useEffect(() => setGameTimer(0), [superBigBoggle]);
+
+  useEffect(() => setGameTimer(0), [dice]);
 
   return (
     <Wrapper>
@@ -87,6 +90,7 @@ export default function GameTimer({
 };
 
 interface GameTimerProps {
+  dice: DieObject[];
   setShowDice: React.Dispatch<React.SetStateAction<boolean>>,
   superBigBoggle: boolean;
-}
+};

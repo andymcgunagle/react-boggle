@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 import { boggleDice } from './data/boggleDice';
+import { superBigBoggleDice } from './data/superBigBoggleDice';
 
 import { getRandomLetterFromDie } from './utils/getRandomLetterFromDie';
 
 import styled from 'styled-components';
 
 import GameTimer from './components/GameTimer';
-import { superBigBoggleDice } from './data/superBigBoggleDice';
 
 const Wrapper = styled.div`
   display: flex;
@@ -64,12 +64,12 @@ export default function App() {
   const [superBigBoggle, setSuperBigBoggle] = useState(false);
   const [showDice, setShowDice] = useState(false);
 
-  const shakeDice = () => {
+  function shakeDice() {
     setShowDice(false);
     setDice([...dice.sort(() => Math.random() - 0.5)]);
   };
 
-  const switchGames = () => {
+  function switchGames() {
     setShowDice(false);
     setDice(superBigBoggle ? boggleDice : superBigBoggleDice);
     setSuperBigBoggle(!superBigBoggle);
@@ -81,6 +81,7 @@ export default function App() {
         React {superBigBoggle ? 'Super Big Boggle' : 'Boggle'}
       </h1>
       <GameTimer
+        dice={dice}
         setShowDice={setShowDice}
         superBigBoggle={superBigBoggle}
       />
